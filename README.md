@@ -1,7 +1,7 @@
 # rss-to-bootstrap-carousel
 
 ## Usage:
-Include the JS file in your page
+Include jQuery, Bootstrap and the plugin on your page. Then select an element in which to create your carousel and call the `showRSS` method.
 ```html
 <script src="rss-to-bootstrap-carousel.min.js"></script>
 <script>
