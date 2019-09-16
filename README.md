@@ -1,7 +1,17 @@
+# rss-to-bootstrap-carousel
+
+## Usage:
+Include the JS file in your page
+```html
+<script src="rss-to-bootstrap-carousel.min.js"></script>
+<script>
+  $("#wrapper").showRSS('https://weather-broker-cdn.api.bbci.co.uk/en/forecast/rss/3day/2643123',3);
+</script>
+```
+Note:
+The second parameter is [OPTIONAL] the number of results to use in your carousel.
+
+
 Forked from Feednami
 
-Current Feednami v1 users should move to v1.1 by creating a Sekando Web Toolkit account and importing the new JavaScript client on their websites. The v1 API will be shut down soon and limitations on free trial usage will be more strictly enforced.
-
 See [the documentation](https://toolkit.sekando.com/docs/en/feednami) for more details.
-
-Please submit any questions as a comment on issue [#9](https://github.com/sekando/feednami-client/issues/9)
