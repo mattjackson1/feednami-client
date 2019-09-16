@@ -40,11 +40,6 @@ $.fn.extend({
   }
 });
 
-/*!
- * Feednami Client v1.0.1 - DONT CHANGE BELOW THIS LINE
- * Copyright (c) 2015 Richard Kazuo Miller and contributors
- */
-
 window.feednami = {};
 feednami.load = function(options, callback) {
   var apiRoot = "https://api.feednami.com/api/v1";
