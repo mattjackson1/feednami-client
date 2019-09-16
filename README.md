@@ -10,8 +10,3 @@ Include jQuery, Bootstrap and the plugin on your page. Then select an element in
 ```
 Note:
 The second parameter is [OPTIONAL] the number of results to use in your carousel.
-
-
-Forked from Feednami
-
-See [the documentation](https://toolkit.sekando.com/docs/en/feednami) for more details.
