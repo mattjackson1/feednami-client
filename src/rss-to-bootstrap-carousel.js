@@ -1,7 +1,3 @@
-// EXAMPLE USAGE
-// $(".carousel-inner").showRSS("https://www.burytimes.co.uk/news/rss/");
-
-
 $.fn.extend({
   showRSS: function(url, num) {
     if (num === undefined) {
@@ -9,26 +5,34 @@ $.fn.extend({
     }
 
     return this.each(function() {
-
-      var currentObject = $(this); // each DOM element in this loop
+      var currentObject = $(this).append(
+        $("<div>", { class: "carousel slide", "data-ride": "carousel" }).append(
+          $("<div>", { class: "carousel-inner", role: "listbox" })
+        )
+      );
 
       feednami.load(url, function(result) {
         if (result.error) {
           console.log(result.error);
-        } else {          
+        } else {
           var entries = result.feed.entries;
           for (var i = 0; i < num; i++) {
-            
             var entry = entries[i];
-            
-            var itemClass = 'item';
-            i === 0 ? itemClass+=' active' : null;
-            
-            var $div = $("<div>", {"class": itemClass}).append(
-              $("<a>", {href: entry.link, target: "_blank", text: entry.title})
-            )
-            
-            currentObject.append($div);
+
+            var itemClass = "item";
+            i === 0 ? (itemClass += " active") : null;
+
+            var $item = $("<div>", { class: itemClass, role: 'option'}).append(
+              $("<a>", {
+                href: entry.link,
+                target: "_blank",
+                text: entry.title
+              })
+            );
+
+            currentObject
+              .find('.carousel-inner')
+              .append($item);
           }
         }
       });
@@ -59,10 +63,10 @@ feednami.load = function(options, callback) {
   if (window.XDomainRequest) {
     var script = document.createElement("script");
     var callbackName =
-        "jsonp_callback_" +
-        new Date().getTime() +
-        "_" +
-        Math.round(1000000 * Math.random());
+      "jsonp_callback_" +
+      new Date().getTime() +
+      "_" +
+      Math.round(1000000 * Math.random());
     url += "&jsonp_callback=" + callbackName;
     window[callbackName] = function(data) {
       callback(data);
