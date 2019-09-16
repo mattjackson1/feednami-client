@@ -8,5 +8,6 @@ Include jQuery, Bootstrap and the plugin on your page. Then select an element in
   $("#wrapper").showRSS('https://weather-broker-cdn.api.bbci.co.uk/en/forecast/rss/3day/2643123',3);
 </script>
 ```
-Note:
-The second parameter is [OPTIONAL] the number of results to use in your carousel.
+### Parameters:
+1st parameter is the RSS URL, it is the source of your data
+2nd parameter is OPTIONAL. It is the number of results to use in your carousel. Left empty, it defaults to 10.
